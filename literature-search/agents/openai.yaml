@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Search"
+  short_description: "优先使用Scopus核验文献，导出含摘要的BibTeX和LaTeX"
+  default_prompt: "Use $literature-search to find and verify literature with Scopus and export BibTeX plus a LaTeX catalog."
