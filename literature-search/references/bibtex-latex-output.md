@@ -69,7 +69,7 @@ Before delivery:
 2. Check required fields, unique citation keys, normalized DOI values, DOI uniqueness, balanced braces, and nonempty abstracts.
 3. Verify journal articles have volume/issue/pages or an explicit authoritative not-assigned explanation.
 4. Check Chinese-language and recent-publication quotas from the final records.
-5. Run `audit_literature_bib("literature_references.bib", "literature_audit.txt")` from the Skill's `scripts` directory in MATLAB and resolve all failures. When the user overrides defaults, pass name-value options such as `TargetCount=30`, `ChineseRatio=0.4`, and `RecentRatio=0.5`.
+5. Create or reuse a project-specific Python virtual environment, then run `python scripts/audit_literature_bib.py literature_references.bib --report literature_audit.txt` and resolve all failures. When the user overrides defaults, pass options such as `--target-count 30`, `--chinese-ratio 0.4`, and `--recent-ratio 0.5`.
 6. Compile `literature_catalog.tex` using XeLaTeX. Run additional passes when references or contents require them.
 7. Inspect the log for errors, missing characters, undefined references, overfull layout, and truncated abstracts. Fix problems and recompile.
 8. Compile to a temporary PDF as a layout and syntax check. Deliver `.bib` and `.tex` by default. Deliver the compiled `.pdf` only when the user explicitly requests PDF output. If XeLaTeX is unavailable or compilation fails, report the exact blocker and do not claim the `.tex` was compilation-verified.

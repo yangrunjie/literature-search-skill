@@ -62,6 +62,6 @@ Do not create Excel, XLSX, CSV, or other spreadsheet deliverables unless the use
 
 Use English filenames. Validate that the number of verified BibTeX entries equals the number of literature records in the LaTeX catalog and the reported final `N`.
 
-Run `scripts/audit_literature_bib.m` in MATLAB against the final `.bib` file. Pass the user's target count and ratios through `TargetCount`, `ChineseRatio`, and `RecentRatio` when they override defaults. Treat any reported missing field, duplicate DOI/key, invalid year, article volume/issue/pages gap, or quota failure as blocking until corrected.
+Run `scripts/audit_literature_bib.py` in a project-specific Python virtual environment against the final `.bib` file. Pass user overrides through `--target-count`, `--chinese-ratio`, and `--recent-ratio`. Treat any reported missing field, duplicate DOI/key, invalid year, article volume/issue/pages gap, or quota failure as blocking until corrected.
 
 Do not present a partially verified set as complete. If database access or topic scarcity makes a requirement impossible, report the verified partial count, identify the exact unmet quota, and explain the evidence gap instead of padding the bibliography.
